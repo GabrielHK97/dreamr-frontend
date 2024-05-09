@@ -78,8 +78,8 @@ function edit() {
     <div className="text-cyan-700 font-bold background h-screen w-screen color-text flex items-center justify-center flex-col">
       <Navbar />
       <div className="flex-grow flex flex-col justify-center items-center">
-        <div className="color flex flex-col gap-2 justify-center items-center p-2 rounded-xl w-80">
-          <div className="border-2 color-border text-gray-700 gap-2 p-2 rounded-xl flex justify-center items-center flex-col w-full">
+        <div className="color flex flex-col gap-2 justify-center items-center p-2 rounded-xl w-80 border-2 border-gray-700 shadow">
+          <div className="text-gray-700 gap-2 p-2 rounded-xl flex justify-center items-center flex-col w-full">
             <label className="w-full">
               Data Início
               <input
