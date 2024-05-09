@@ -1,7 +1,7 @@
 import AppLogo from "./assets/dreamr.png";
-import axios from "axios";
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { getDatabase } from "./database";
 
 function Root() {
   const [username, setUsername] = useState<string>("");
@@ -10,8 +10,7 @@ function Root() {
   const navigate = useNavigate();
 
   function login(): any {
-    axios.defaults.baseURL = "http://localhost:8000";
-    axios
+    getDatabase()
       .post("/auth/login", { username, password }, { withCredentials: true })
       .then(() => {
         setMessage("Logged in!");
@@ -23,16 +22,15 @@ function Root() {
   }
 
   useEffect(() => {
-    axios.defaults.baseURL = "http://localhost:8000";
-    axios.get("/auth", { withCredentials: true }).then(() => {
+    getDatabase().get("/auth", { withCredentials: true }).then(() => {
       navigate("/panel");
     }).catch(() => {});
-  }, []);
+  }, [navigate]);
 
   return (
     <div className="font-bold background h-screen w-screen color-text flex items-center justify-center flex-col">
       <div className="flex-grow flex flex-col justify-center items-center p-3 gap-3">
-      <img src={AppLogo}/>
+      <img src={AppLogo} alt="Logo"/>
         <div className="color flex flex-col gap-2 justify-center items-center p-2 rounded-xl w-80 border-2 border-gray-700 shadow">
           <div className="text-gray-700 gap-2 p-2 rounded-xl flex justify-center items-center flex-col w-full">
             <label className="w-full">

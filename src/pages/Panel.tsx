@@ -1,7 +1,7 @@
-import axios from "axios";
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import Navbar from "../components/navbar";
+import { getDatabase } from "../database";
 
 interface User {
   name: string;
@@ -16,8 +16,7 @@ function Panel() {
   const navigate = useNavigate();
 
   function getData() {
-    axios.defaults.baseURL = "http://localhost:8000";
-    axios
+    getDatabase()
       .get("/user", { withCredentials: true })
       .then((res) => {
         setData({ ...res.data.data });
@@ -26,12 +25,11 @@ function Panel() {
   }
 
   useEffect(() => {
-    axios.defaults.baseURL = "http://localhost:8000";
-    axios.get("/auth", { withCredentials: true }).catch(() => {
+    getDatabase().get("/auth", { withCredentials: true }).catch(() => {
       navigate("/");
     });
     getData();
-  }, []);
+  }, [navigate]);
 
   return (
     <div className="text-gray-700 font-bold background bg-gray-700 w-screen h-screen flex flex-col">

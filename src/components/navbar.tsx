@@ -1,12 +1,11 @@
-import axios from "axios";
 import { useNavigate } from "react-router-dom";
+import { getDatabase } from "../database";
 
 function Navbar() {
   const navigate = useNavigate();
 
   function logout() {
-    axios.defaults.baseURL = "http://localhost:8000";
-    axios.get("/auth/logout", { withCredentials: true }).then(() => {
+    getDatabase().get("/auth/logout", { withCredentials: true }).then(() => {
       navigate("/");
     });
   }

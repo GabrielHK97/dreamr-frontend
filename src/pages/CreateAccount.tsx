@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { SexEnum } from "../enum/sex.enum";
-import axios from "axios";
+import { getDatabase } from "../database";
 
 function CreateAccount() {
   const [name, setName] = useState<string>("");
@@ -23,8 +23,7 @@ function CreateAccount() {
   }
 
   function create(): any {
-    axios.defaults.baseURL = "http://localhost:8000";
-    axios
+    getDatabase()
       .post(
         "/user/create",
         { name, birthDate, sex, height, username, password, confirmPassword },

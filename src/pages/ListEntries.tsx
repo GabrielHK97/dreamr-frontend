@@ -1,7 +1,7 @@
-import axios from "axios";
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import Navbar from "../components/navbar";
+import { getDatabase } from "../database";
 
 interface Entry {
   id: number;
@@ -19,8 +19,7 @@ function ListEntries() {
   const [showModal, setShowModal] = useState<boolean>(false);
 
   function remove() {
-    axios.defaults.baseURL = "http://localhost:8000";
-    axios
+   getDatabase()
       .delete(`/entry/${id}`, { withCredentials: true })
       .then(() => {
         getData();
@@ -29,8 +28,7 @@ function ListEntries() {
   }
 
   function getData() {
-    axios.defaults.baseURL = "http://localhost:8000";
-    axios
+    getDatabase()
       .get("/entry", { withCredentials: true })
       .then((res) => {
         setData(res.data.data);

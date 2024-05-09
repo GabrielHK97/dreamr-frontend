@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
-import axios from "axios";
 import Navbar from "../components/navbar";
+import { getDatabase } from "../database";
 
 function CreateEntry() {
 const [id, setId] = useState<number | undefined>(undefined);
@@ -18,8 +18,7 @@ const [id, setId] = useState<number | undefined>(undefined);
   }
 
   function create(): any {
-    axios.defaults.baseURL = "http://localhost:8000";
-    axios
+    getDatabase()
       .post(
         "/entry",
         { dateStart, timeStart, dateEnd, timeEnd },
@@ -35,8 +34,7 @@ const [id, setId] = useState<number | undefined>(undefined);
   }
 
 function edit() {
-    axios.defaults.baseURL = "http://localhost:8000";
-    axios
+    getDatabase()
       .patch(
         `/entry/${id}`,
         { dateStart, timeStart, dateEnd, timeEnd },
@@ -52,8 +50,7 @@ function edit() {
 
 
   function getEntry(id: number) {
-    axios.defaults.baseURL = "http://localhost:8000";
-    axios
+    getDatabase()
       .get(
         `/entry/${id}`,
         { withCredentials: true }
