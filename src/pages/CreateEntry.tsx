@@ -84,7 +84,7 @@ function edit() {
               Data Início
               <input
                 type="date"
-                className="date rounded-md bg-gray-700 color-text w-full p-1"
+                className="date rounded-md bg-gray-700 color-text w-full p-1 h-8"
                 required
                 onChange={(e) => {
                   setDateStart(e.target.value);
@@ -96,7 +96,7 @@ function edit() {
               Horas Início
               <input
                 type="text"
-                className="rounded-md bg-gray-700 color-text w-full p-1"
+                className="rounded-md bg-gray-700 color-text w-full p-1 h-8"
                 required
                 onChange={(e) => {
                   setTimeStart(e.target.value);
@@ -108,7 +108,7 @@ function edit() {
               Data Fim
               <input
                 type="date"
-                className="date rounded-md bg-gray-700 color-text w-full p-1"
+                className="date rounded-md bg-gray-700 color-text w-full p-1 h-8"
                 required
                 onChange={(e) => {
                   setDateEnd(e.target.value);
@@ -120,7 +120,7 @@ function edit() {
               Horas Fim
               <input
                 type="text"
-                className="rounded-md bg-gray-700 color-text w-full p-1"
+                className="rounded-md bg-gray-700 color-text w-full p-1 h-8"
                 required
                 onChange={(e) => {
                   setTimeEnd(e.target.value);

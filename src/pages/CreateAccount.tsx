@@ -47,7 +47,7 @@ function CreateAccount() {
               Nome
               <input
                 type="text"
-                className="rounded-md bg-gray-700 color-text w-full p-1"
+                className="rounded-md bg-gray-700 color-text w-full p-1 h-8"
                 required
                 onChange={(e) => {
                   setName(e.target.value);
@@ -58,7 +58,7 @@ function CreateAccount() {
               Data de Nascimento
               <input
                 type="date"
-                className="rounded-md bg-gray-700 color-text w-full p-1"
+                className="rounded-md bg-gray-700 color-text w-full p-1 h-8"
                 required
                 onChange={(e) => {
                   setBirthDate(e.target.value);
@@ -68,7 +68,7 @@ function CreateAccount() {
             <label className="w-full">
               Sexo
               <select
-                className="rounded-md bg-gray-700 color-text w-full p-1"
+                className="rounded-md bg-gray-700 color-text w-full p-1 h-8"
                 required
                 onChange={(e) => {
                   setSex(e.target.value);
@@ -84,7 +84,7 @@ function CreateAccount() {
               Altura
               <input
                 type="text"
-                className="rounded-md bg-gray-700 color-text w-full p-1"
+                className="rounded-md bg-gray-700 color-text w-full p-1 h-8"
                 required
                 onChange={(e) => {
                   setHeight(e.target.value);
@@ -95,7 +95,7 @@ function CreateAccount() {
               Usuário
               <input
                 type="text"
-                className="rounded-md bg-gray-700 color-text w-full p-1"
+                className="rounded-md bg-gray-700 color-text w-full p-1 h-8"
                 required
                 onChange={(e) => {
                   setUsername(e.target.value);
@@ -106,7 +106,7 @@ function CreateAccount() {
               Senha
               <input
                 type="password"
-                className="rounded-md bg-gray-700 color-text w-full p-1"
+                className="rounded-md bg-gray-700 color-text w-full p-1 h-8"
                 required
                 onChange={(e) => {
                   setPassword(e.target.value);
@@ -117,7 +117,7 @@ function CreateAccount() {
               Confirmar Senha
               <input
                 type="password"
-                className="rounded-md bg-gray-700 color-text w-full p-1"
+                className="rounded-md bg-gray-700 color-text w-full p-1 h-8"
                 required
                 onChange={(e) => {
                   setConfirmPassword(e.target.value);

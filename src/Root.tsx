@@ -37,7 +37,7 @@ function Root() {
               Usuário
               <input
                 type="text"
-                className="rounded-md color-text bg-gray-700 w-full p-1"
+                className="rounded-md color-text bg-gray-700 w-full p-1 h-8"
                 required
                 onChange={(e) => {
                   setUsername(e.target.value);
@@ -48,7 +48,7 @@ function Root() {
               Senha
               <input
                 type="password"
-                className="rounded-md color-text bg-gray-700 w-full p-1"
+                className="rounded-md color-text bg-gray-700 w-full p-1 h-8"
                 required
                 onChange={(e) => {
                   setPassword(e.target.value);
