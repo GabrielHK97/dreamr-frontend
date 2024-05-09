@@ -58,7 +58,7 @@ function CreateAccount() {
               Data de Nascimento
               <input
                 type="date"
-                className="rounded-md bg-gray-700 color-text w-full p-1 h-8"
+                className="date rounded-md bg-gray-700 color-text w-full p-1 h-8"
                 required
                 onChange={(e) => {
                   setBirthDate(e.target.value);
