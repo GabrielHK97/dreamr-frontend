@@ -2,10 +2,11 @@ import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import Navbar from "../components/navbar";
 import { getDatabase } from "../database";
+import { SexEnum } from "../enum/sex.enum";
 
 interface User {
   name: string;
-  sex: string;
+  sex: SexEnum;
   age: string;
   height: string;
   sleepTimeAverage: string;
@@ -22,6 +23,17 @@ function Panel() {
         setData({ ...res.data.data });
       })
       .catch((error) => {});
+  }
+
+  function sex(sex: SexEnum) {
+    switch(sex) {
+        case SexEnum.MALE:
+            return 'homem';
+        case SexEnum.FEMALE:
+            return 'mulher';
+        case SexEnum.OTHER:
+        return 'outro';
+    }
   }
 
   useEffect(() => {
@@ -53,7 +65,7 @@ function Panel() {
         </div>
         <div className="color w-full rounded-lg p-2 border-2 border-gray-700 shadow">
           <div>Nome: {data.name}</div>
-          <div>Sexo: {data.sex}</div>
+          <div>Sexo: {sex(data.sex)}</div>
           <div>Idade: {data.age}</div>
           <div>Altura: {data.height}m</div>
         </div>
